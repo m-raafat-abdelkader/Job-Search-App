@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "4ddb71ab-2911-49e8-bb39-d195e4ac8d77",
 		"name": "Job Search App",
-		"description": "This Job Search App allows users to search for jobs relevant to their domain or area of interest.\n\nLive on Vercel: [jop-search-app.vercel.app](https://jop-search-app.vercel.app/)\n\n## Features of Job Search App:\n\n- Filter options to get the required job.\n    \n- Handles the User's data.\n    \n- Handles the Company's data.\n    \n- Handles the Job Applications.\n    \n\n## Collections\n\n### User Collection\n\n1. `firstName`\n    \n2. `lastName`\n    \n3. `username` (firstName + lastName)\n    \n4. `email` (unique)\n    \n5. `password`\n    \n6. `recoveryEmail` (not unique)\n    \n7. `DOB` (date of birth, must be date format 2023-12-4)\n    \n8. `mobileNumber` (unique)\n    \n9. `role` (User, Company_HR)\n    \n10. `status` (online, offline)\n    \n\n### Company Collection\n\n1. `companyName` (unique)\n    \n2. `description` (description of the company's activities and services)\n    \n3. `industry` (e.g., Mental Health care)\n    \n4. `address`\n    \n5. `numberOfEmployees` (must be a range, e.g., 11-20 employees)\n    \n6. `companyEmail` (unique)\n    \n7. `companyHR` (userId)\n    \n\n### Job Collection\n\n1. `jobTitle` (e.g., NodeJs back-end developer)\n    \n2. `jobLocation` (onsite, remotely, hybrid)\n    \n3. `workingTime` (part-time, full-time)\n    \n4. `seniorityLevel` (Junior, Mid-Level, Senior, Team-Lead, CTO)\n    \n5. `jobDescription` (details of the job and responsibilities)\n    \n6. `technicalSkills` (array of skills, e.g., nodejs, typescript)\n    \n7. `softSkills` (array of skills, e.g., time management, team worker)\n    \n8. `addedBy` (ID of the companyHR who added this job)\n    \n\n### Application Collection\n\n1. `jobId` (the Job ID)\n    \n2. `userId` (the applicant's ID)\n    \n3. `userTechSkills` (array of the applicant's technical skills)\n    \n4. `userSoftSkills` (array of the applicant's soft skills)\n    \n5. `userResume` (link to resume)\n    \n\n## User APIs\n\n1. **Sign Up**\n    \n2. **Sign In**\n    \n    - Sign in using (email, recoveryEmail, or mobileNumber) and password.\n        \n    - Update status to online after sign-in.\n        \n3. **Update Account**\n    \n    - Update one or more of the following: email, mobile number, recovery email, date of birth (DOB), last name, or first name.\n        \n    - Ensure new data doesn't conflict with existing data.\n        \n    - User must be logged in.\n        \n    - Only the account owner can update his data.\n        \n4. **Delete Account**\n    \n    - Only the account owner can delete his data.\n        \n    - User must be logged in.\n        \n5. **Get User Account Data**\n    \n    - Only the account owner can get his data.\n        \n    - User must be logged in.\n        \n6. **Get Profile Data for Another User**\n    \n    - Send the userId in params or query.\n        \n7. **Update Password**\n    \n8. **Forget Password:** Ensure data security, especially the OTP and new password.\n    \n9. **Get All Accounts Associated to a Specific Recovery Email**\n    \n\n## Company APIs\n\n1. **Add Company**\n    \n    - Apply authorization with role (Company_HR).\n        \n2. **Update Company Data**\n    \n    - Only the company owner can update the data.\n        \n    - Apply authorization with role (Company_HR).\n        \n3. **Delete Company Data**\n    \n    - Only the company owner can delete the data.\n        \n    - Apply authorization with role (Company_HR).\n        \n4. **Get Company Data**\n    \n    - Send the companyId in params to get the desired company data.\n        \n    - Return all jobs related to this company.\n        \n    - Apply authorization with role (Company_HR).\n        \n5. **Search for a Company by Name**\n    \n    - Apply authorization with role (Company_HR and User).\n        \n6. **Get All Applications for a Specific Job**\n    \n    - Each company owner can view applications for his jobs only.\n        \n    - Return each application with user data, not userId.\n        \n    - Apply authorization with role (Company_HR)\n        \n\n## Jobs APIs\n\n1. **Add Job**\n    \n    - Apply authorization with role (Company_HR).\n        \n2. **Update Job**\n    \n    - Apply authorization with role (Company_HR).\n        \n3. **Delete Job**\n    \n    - Apply authorization with role (Company_HR).\n        \n4. **Get All Jobs with Their Company's Information**\n    \n    - Apply authorization with role (User and Company_HR).\n        \n5. **Get All Jobs for a Specific Company**\n    \n    - Apply authorization with role (User and Company_HR).\n        \n    - Send the company name in the query to get this company's jobs.\n        \n6. **Get All Jobs that Match Specific Filters**\n    \n    - Filter by workingTime, jobLocation, seniorityLevel, jobTitle, technicalSkills.\n        \n    - One or more filters can be applied.  \n        Example: If the user selects workingTime as part-time and jobLocation as onsite, all jobs that match these conditions should be returned.\n        \n    - Apply authorization with role (User and Company_HR).\n        \n7. **Apply to Job**\n    \n    - Add a new document in the application collection with the new data.\n        \n    - Apply authorization with role (User).",
+		"description": "This Job Search App allows users to search for jobs relevant to their domain or area of interest.\n\nLive on Vercel: [job-search-app.vercel.app](https://job-search-app-alpha.vercel.app/)\n\n## Features of Job Search App:\n\n- Filter options to get the required job.\n    \n- Handles the User's data.\n    \n- Handles the Company's data.\n    \n- Handles the Job Applications.\n    \n\n## Collections\n\n### User Collection\n\n1. `firstName`\n    \n2. `lastName`\n    \n3. `username` (firstName + lastName)\n    \n4. `email` (unique)\n    \n5. `password`\n    \n6. `recoveryEmail` (not unique)\n    \n7. `DOB` (date of birth, must be date format 2023-12-4)\n    \n8. `mobileNumber` (unique)\n    \n9. `role` (User, Company_HR)\n    \n10. `status` (online, offline)\n    \n\n### Company Collection\n\n1. `companyName` (unique)\n    \n2. `description` (description of the company's activities and services)\n    \n3. `industry` (e.g., Mental Health care)\n    \n4. `address`\n    \n5. `numberOfEmployees` (must be a range, e.g., 11-20 employees)\n    \n6. `companyEmail` (unique)\n    \n7. `companyHR` (userId)\n    \n\n### Job Collection\n\n1. `jobTitle` (e.g., NodeJs back-end developer)\n    \n2. `jobLocation` (onsite, remotely, hybrid)\n    \n3. `workingTime` (part-time, full-time)\n    \n4. `seniorityLevel` (Junior, Mid-Level, Senior, Team-Lead, CTO)\n    \n5. `jobDescription` (details of the job and responsibilities)\n    \n6. `technicalSkills` (array of skills, e.g., nodejs, typescript)\n    \n7. `softSkills` (array of skills, e.g., time management, team worker)\n    \n8. `addedBy` (ID of the companyHR who added this job)\n    \n\n### Application Collection\n\n1. `jobId` (the Job ID)\n    \n2. `userId` (the applicant's ID)\n    \n3. `userTechSkills` (array of the applicant's technical skills)\n    \n4. `userSoftSkills` (array of the applicant's soft skills)\n    \n5. `userResume` (link to resume)\n    \n\n## User APIs\n\n1. **Sign Up**\n    \n2. **Sign In**\n    \n    - Sign in using (email, recoveryEmail, or mobileNumber) and password.\n        \n    - Update status to online after sign-in.\n        \n3. **Update Account**\n    \n    - Update one or more of the following: email, mobile number, recovery email, date of birth (DOB), last name, or first name.\n        \n    - Ensure new data doesn't conflict with existing data.\n        \n    - User must be logged in.\n        \n    - Only the account owner can update his data.\n        \n4. **Delete Account**\n    \n    - Only the account owner can delete his data.\n        \n    - User must be logged in.\n        \n5. **Get User Account Data**\n    \n    - Only the account owner can get his data.\n        \n    - User must be logged in.\n        \n6. **Get Profile Data for Another User**\n    \n    - Send the userId in params or query.\n        \n7. **Update Password**\n    \n8. **Forget Password:** Ensure data security, especially the OTP and new password.\n    \n9. **Get All Accounts Associated to a Specific Recovery Email**\n    \n\n## Company APIs\n\n1. **Add Company**\n    \n    - Apply authorization with role (Company_HR).\n        \n2. **Update Company Data**\n    \n    - Only the company owner can update the data.\n        \n    - Apply authorization with role (Company_HR).\n        \n3. **Delete Company Data**\n    \n    - Only the company owner can delete the data.\n        \n    - Apply authorization with role (Company_HR).\n        \n4. **Get Company Data**\n    \n    - Send the companyId in params to get the desired company data.\n        \n    - Return all jobs related to this company.\n        \n    - Apply authorization with role (Company_HR).\n        \n5. **Search for a Company by Name**\n    \n    - Apply authorization with role (Company_HR and User).\n        \n6. **Get All Applications for a Specific Job**\n    \n    - Each company owner can view applications for his jobs only.\n        \n    - Return each application with user data, not userId.\n        \n    - Apply authorization with role (Company_HR)\n        \n\n## Jobs APIs\n\n1. **Add Job**\n    \n    - Apply authorization with role (Company_HR).\n        \n2. **Update Job**\n    \n    - Apply authorization with role (Company_HR).\n        \n3. **Delete Job**\n    \n    - Apply authorization with role (Company_HR).\n        \n4. **Get All Jobs with Their Company's Information**\n    \n    - Apply authorization with role (User and Company_HR).\n        \n5. **Get All Jobs for a Specific Company**\n    \n    - Apply authorization with role (User and Company_HR).\n        \n    - Send the company name in the query to get this company's jobs.\n        \n6. **Get All Jobs that Match Specific Filters**\n    \n    - Filter by workingTime, jobLocation, seniorityLevel, jobTitle, technicalSkills.\n        \n    - One or more filters can be applied.  \n        Example: If the user selects workingTime as part-time and jobLocation as onsite, all jobs that match these conditions should be returned.\n        \n    - Apply authorization with role (User and Company_HR).\n        \n7. **Apply to Job**\n    \n    - Add a new document in the application collection with the new data.\n        \n    - Apply authorization with role (User).",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "32279973"
 	},
@@ -51,9 +51,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/user/signup",
+									"raw": "https://jop-search-app.vercel.app/user/signup",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"jop-search-app",
+										"vercel",
+										"app"
 									],
 									"path": [
 										"user",
@@ -140,9 +143,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/user/login",
+									"raw": "https://jop-search-app.vercel.app/user/login",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"jop-search-app",
+										"vercel",
+										"app"
 									],
 									"path": [
 										"user",
@@ -241,9 +247,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/user/update",
+									"raw": "https://jop-search-app.vercel.app/user/update",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"jop-search-app",
+										"vercel",
+										"app"
 									],
 									"path": [
 										"user",
@@ -324,9 +333,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/user/delete",
+									"raw": "https://jop-search-app.vercel.app/user/delete",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"jop-search-app",
+										"vercel",
+										"app"
 									],
 									"path": [
 										"user",
@@ -407,9 +419,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/user/get",
+									"raw": "https://jop-search-app.vercel.app/user/get",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"jop-search-app",
+										"vercel",
+										"app"
 									],
 									"path": [
 										"user",
@@ -496,9 +511,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/user/getAnotherUser?_id=668f15dfe8af074171ec634a",
+									"raw": "https://jop-search-app.vercel.app/user/getAnotherUser?_id=668f15dfe8af074171ec634a",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"jop-search-app",
+										"vercel",
+										"app"
 									],
 									"path": [
 										"user",
@@ -603,9 +621,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/user/updatePassword",
+									"raw": "https://jop-search-app.vercel.app/user/updatePassword",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"jop-search-app",
+										"vercel",
+										"app"
 									],
 									"path": [
 										"user",
@@ -698,9 +719,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/user/forgetPassword?email=mohamed.raafat.abdelkader@gmail.com",
+									"raw": "https://jop-search-app.vercel.app/user/forgetPassword?email=mohamed.raafat.abdelkader@gmail.com",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"jop-search-app",
+										"vercel",
+										"app"
 									],
 									"path": [
 										"user",
@@ -776,9 +800,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/user/getAllAccountsAssociatedtoRecoveryEmail/mo123@gmail.com",
+									"raw": "https://jop-search-app.vercel.app/user/getAllAccountsAssociatedtoRecoveryEmail/mo123@gmail.com",
+									"protocol": "https",
 									"host": [
-										"{{url}}"
+										"jop-search-app",
+										"vercel",
+										"app"
 									],
 									"path": [
 										"user",
